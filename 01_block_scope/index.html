@@ -7,7 +7,25 @@
 	
 	<body>
 		<script>
+			
 			"use strict";
+			
+			var t = 20;
+			
+			console.log(t);
+
+			function doIt() {
+
+				// temporal dead zone
+				t = 10;
+
+				let t;
+
+			  console.log(t);
+			}
+			
+			doIt();
+
 		</script>
 	</body>
 </html>

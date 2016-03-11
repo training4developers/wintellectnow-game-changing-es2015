@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Classes Demonstration</title>
+	</head>
+	
+	<body>
+		<script>
+			"use strict";
+
+			function Person(firstName, lastName) {
+				this.firstName = firstName;
+				this.lastName = lastName;
+			}
+			
+			Person.prototype.getFullName = function() {
+				return this.firstName + " " + this.lastName;
+			}
+			
+			var p = new Person("Bob", "Smith");
+			console.log(p.getFullName());
+						
+		</script>
+	</body>
+</html>

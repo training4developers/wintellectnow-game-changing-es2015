@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Classes Demonstration</title>
+	</head>
+	
+	<body>
+		<script>
+			"use strict";
+
+			class Person {
+				
+				constructor(firstName, lastName) {
+					this._firstName = firstName;
+					this._lastName = lastName;
+				}
+				
+				get firstName() {
+					//console.log("get firstname");
+					return this._firstName;
+				}
+				
+				set firstName(fn) {
+					this._firstName = fn;
+				}
+				
+				get lastName() {
+					//console.log("get lastname");
+					return this._lastName;
+				}
+				
+				set lastName(ln) {
+					this._lastName = ln;
+				}				
+				
+				getFullName() {
+					return this.firstName + " " + this.lastName;
+				}
+				
+				static create(firstName, lastName) {
+					return new Person(firstName, lastName);
+				}
+				
+			}
+			
+			class Student extends Person {
+				
+				constructor(studentId, firstName, lastName) {
+					super(firstName, lastName);
+					this._studentId = studentId;
+				}
+				
+				get studentId() {
+					return this._studentId;
+				}
+				
+				set studentId(sid) {
+					this._studentId = sid;
+				}
+				
+				getRecordTitle() {
+					return this.studentId + " " + this.lastName + ", " + this.firstName;
+				}
+			}
+			
+			var s = new Student(1, "Bob", "Smith");
+			console.log(s.getRecordTitle());
+			console.log(s.getFullName());
+						
+		</script>
+	</body>
+</html>
